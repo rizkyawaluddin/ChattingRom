@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { GrFormClose } from 'react-icons/gr';
 
+const convertTime = (value) => {
+  let time = new Date(value);
+  time = `${time.getHours()}:${time.getMinutes()}`;
+  return time;
+};
+
+
 export default function Message({ contact, loadMessage, messages }) {
   const divRef = useRef(null);
 
@@ -55,8 +62,3 @@ export default function Message({ contact, loadMessage, messages }) {
   );
 }
 
-const convertTime = (value) => {
-  let time = new Date(value);
-  time = `${time.getHours()}:${time.getMinutes()}`;
-  return time;
-};
